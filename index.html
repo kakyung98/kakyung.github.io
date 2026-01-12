@@ -1,96 +1,413 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>Researcher Homepage</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Personal academic homepage" />
+  <title>Donghyuk Shin · Awards</title>
+
   <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      color: #222;
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:#e2e8f0;
+      --card:#f8fafc;
+      --primary:#2563eb;
+      --primary-weak:#dbeafe;
+      --shadow: 0 1px 2px rgba(15,23,42,.06), 0 6px 18px rgba(15,23,42,.08);
+      --radius:14px;
+      --max: 1100px;
+      --sidebar: 340px;
+      --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Helvetica Neue", Arial, "Segoe UI Emoji";
     }
-    h1, h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 6px;
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: var(--font);
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.55;
     }
-    ul {
-      padding-left: 20px;
+
+    /* Top nav */
+    .topbar{
+      position: sticky;
+      top:0;
+      z-index: 50;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
     }
-    .section {
-      margin-bottom: 40px;
+    .topbar-inner{
+      max-width: var(--max);
+      margin:0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
     }
-    .contact a {
-      color: #0066cc;
-      text-decoration: none;
+    .brand{
+      font-size: 20px;
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    .nav a{
+      text-decoration:none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+    .nav a:hover{ color: var(--text); background: #f1f5f9; }
+    .nav a.active{
+      color: var(--primary);
+      background: var(--primary-weak);
+    }
+
+    /* Layout */
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 54px;
+      display:grid;
+      grid-template-columns: var(--sidebar) 1fr;
+      gap: 28px;
+      align-items:start;
+    }
+
+    /* Sidebar card */
+    .sidebar{
+      position: sticky;
+      top: 78px;
+      align-self:start;
+    }
+    .profile{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .avatar{
+      width: 132px;
+      height: 132px;
+      border-radius: 999px;
+      overflow:hidden;
+      margin: 8px auto 14px;
+      border: 4px solid #fff;
+      box-shadow: 0 0 0 1px var(--line), 0 10px 25px rgba(15,23,42,.10);
+      background: #e2e8f0;
+    }
+    .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    .name{
+      text-align:center;
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+      margin:0;
+    }
+    .role{
+      text-align:center;
+      margin: 6px 0 14px;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+
+    .meta{
+      display:flex;
+      flex-direction:column;
+      gap: 8px;
+      margin: 14px 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .meta li{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+    .ico{
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      margin-top: 1px;
+      color: #94a3b8;
+    }
+    .meta a{ color: var(--muted); text-decoration:none; }
+    .meta a:hover{ color: var(--primary); text-decoration:underline; }
+
+    .social{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      margin: 14px 0 4px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      color: var(--muted);
+      background: #fff;
+      text-decoration:none;
+    }
+    .chip:hover{ color: var(--primary); border-color: #bfdbfe; background:#eff6ff; }
+
+    .section-title{
+      margin: 18px 0 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      font-weight: 800;
+    }
+    .interests{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px;
+    }
+    .interests a{
+      display:block;
+      padding: 9px 10px;
+      border-radius: 10px;
+      text-decoration:none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 13.5px;
+    }
+    .interests a:hover{ background:#eef2ff; color: var(--primary); }
+
+    /* Main content */
+    main{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background:#fff;
+      box-shadow: var(--shadow);
+      padding: 26px 26px 18px;
+      min-width: 0;
+    }
+    h1{
+      margin: 0 0 10px;
+      font-size: 34px;
+      letter-spacing: -0.03em;
+    }
+    .subhead{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .divider{
+      height:1px;
+      background: var(--line);
+      margin: 16px 0 20px;
+    }
+
+    h2{
+      margin: 0 0 14px;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .award-list{
+      display:flex;
+      flex-direction:column;
+      gap: 18px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    .award{
+      padding: 2px 0 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    .award:last-child{ border-bottom:0; padding-bottom: 0; }
+    .award-date{
+      color: var(--primary);
+      font-weight: 750;
+      font-size: 13.5px;
+      margin-bottom: 4px;
+    }
+    .award-title{
+      font-weight: 800;
+      font-size: 15.5px;
+      margin: 0 0 4px;
+      letter-spacing: -0.01em;
+    }
+    .award-org{
+      color: var(--muted);
+      font-size: 13.5px;
+      margin:0;
+    }
+
+    /* Footer note */
+    .footer-note{
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 12.5px;
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .wrap{ grid-template-columns: 1fr; }
+      .sidebar{ position: static; }
+      main{ padding: 22px 18px 16px; }
+      h1{ font-size: 30px; }
+    }
+    @media (max-width: 520px){
+      .nav a{ padding: 7px 9px; }
+      .brand{ font-size: 18px; }
     }
   </style>
 </head>
+
 <body>
+  <!-- Top Navigation -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Donghyuk Shin</div>
+      <nav class="nav" aria-label="Primary">
+        <a class="active" href="index.html">About</a>
+        <a href="publications.html">Publication</a>
+        <a href="awards.html">Award</a>
+        <a href="research.html">Research Topic</a>
+      </nav>
+    </div>
+  </header>
 
-  <h1>First Last</h1>
-  <p>
-    Research Scientist, XYZ Research Institute<br>
-    Cybersecurity · System Security · Network Security
-  </p>
+  <div class="wrap">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile">
+        <div class="avatar">
+          <!-- GitHub Pages에서는 /assets/profile.jpg 같은 경로로 두는 걸 추천 -->
+          <img src="assets/profile.jpg" alt="Profile photo" />
+        </div>
 
-  <div class="section">
-    <h2>Research Interests</h2>
-    <ul>
-      <li>System and Kernel Security</li>
-      <li>Network Security and Traffic Analysis</li>
-      <li>Vulnerability Analysis and Exploit Mitigation</li>
-      <li>Malware Analysis and Threat Intelligence</li>
-      <li>AI-assisted Security Automation</li>
-    </ul>
+        <h3 class="name">Donghyuk Shin</h3>
+        <p class="role">Ph.D. Student in Information Security</p>
+
+        <ul class="meta">
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M3 11l9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <path d="M9 22V12h6v10"/>
+            </svg>
+            <span>Chonnam National University</span>
+          </li>
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 22s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z"/>
+              <circle cx="12" cy="11" r="2.5"/>
+            </svg>
+            <span>Gwangju, South Korea</span>
+          </li>
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 4h16v16H4z"/>
+              <path d="M4 4l8 8 8-8"/>
+            </svg>
+            <a href="mailto:shindh2@jnu.ac.kr">shindh2@jnu.ac.kr</a>
+          </li>
+        </ul>
+
+        <div class="social" aria-label="Social links">
+          <a class="chip" href="https://github.com/yourid" aria-label="GitHub" title="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .5C5.73.5.75 5.62.75 12c0 5.1 3.29 9.43 7.86 10.96.58.11.79-.26.79-.57 0-.28-.01-1.02-.02-2-3.2.71-3.88-1.57-3.88-1.57-.53-1.37-1.28-1.74-1.28-1.74-1.04-.73.08-.72.08-.72 1.15.08 1.75 1.21 1.75 1.21 1.02 1.79 2.67 1.27 3.32.97.1-.76.4-1.27.73-1.56-2.55-.3-5.23-1.3-5.23-5.78 0-1.28.45-2.33 1.19-3.15-.12-.3-.52-1.52.11-3.16 0 0 .97-.32 3.18 1.2.92-.26 1.91-.39 2.9-.39.99 0 1.98.13 2.9.39 2.2-1.52 3.17-1.2 3.17-1.2.63 1.64.23 2.86.11 3.16.74.82 1.19 1.87 1.19 3.15 0 4.49-2.69 5.48-5.25 5.77.41.36.78 1.07.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.69.8.57 4.56-1.53 7.85-5.86 7.85-10.96C23.25 5.62 18.27.5 12 .5z"/>
+            </svg>
+          </a>
+          <a class="chip" href="https://linkedin.com/in/yourid" aria-label="LinkedIn" title="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-.95 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V23h-4v-6.6c0-1.58-.03-3.6-2.2-3.6-2.2 0-2.54 1.72-2.54 3.49V23h-4V8.5z"/>
+            </svg>
+          </a>
+          <a class="chip" href="https://scholar.google.com/citations?user=YOURID" aria-label="Google Scholar" title="Google Scholar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/>
+              <path d="M5 13.5V18c2.5 2 11.5 2 14 0v-4.5l-7 3.82L5 13.5z"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="section-title">Research Interests</div>
+        <div class="interests">
+          <a href="#">› Cyber Threat Intelligence</a>
+          <a href="#">› Cyber Physical System</a>
+          <a href="#">› Threat Modeling</a>
+          <a href="#">› Digital Forensics</a>
+          <a href="#">› Cyber Deception</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main>
+      <h1>Awards &amp; Honors</h1>
+      <p class="subhead">Academic awards and recognitions.</p>
+
+      <div class="divider"></div>
+
+      <h2>Academic Awards</h2>
+
+      <ul class="award-list">
+        <li class="award">
+          <div class="award-date">Sep 2025</div>
+          <p class="award-title">Excellent Paper Award [President of Korea Agro-Fisheries &amp; Food Trade Corporation Award]</p>
+          <p class="award-org">Korea Institute of Information Security and Cryptology (Fall Conference)</p>
+        </li>
+
+        <li class="award">
+          <div class="award-date">Oct 2024</div>
+          <p class="award-title">Excellent Paper Award [President of Korea Power Exchange (KPX) Award]</p>
+          <p class="award-org">Korea Institute of Information Security and Cryptology (Fall Conference)</p>
+        </li>
+
+        <li class="award">
+          <div class="award-date">Nov 2023</div>
+          <p class="award-title">Emerging Excellence Researcher in Convergence Security</p>
+          <p class="award-org">Korea Convergence Security Association (Fall Conference and Workshop)</p>
+        </li>
+
+        <li class="award">
+          <div class="award-date">Jun 2022</div>
+          <p class="award-title">Excellent Paper Award [President of Korea Internet &amp; Security Agency (KISA) Award]</p>
+          <p class="award-org">Korea Institute of Information Security and Cryptology (CISC-S’22)</p>
+        </li>
+      </ul>
+
+      <div class="divider"></div>
+
+      <h2>Competition Awards</h2>
+      <p class="subhead">여기에 대회 수상 내역을 동일한 형식으로 추가하면 됩니다.</p>
+
+      <div class="footer-note">
+        Tip: GitHub Pages용이면 <code>assets/profile.jpg</code>, <code>cv.pdf</code> 같은 정적 파일을 저장소에 같이 올리면 링크가 동작합니다.
+      </div>
+    </main>
   </div>
-
-  <div class="section">
-    <h2>Education</h2>
-    <ul>
-      <li>Ph.D. in Computer Science, ABC University (20XX – 20XX)</li>
-      <li>M.S. in Computer Science, ABC University (20XX – 20XX)</li>
-      <li>B.S. in Computer Science, ABC University (20XX – 20XX)</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Awards</h2>
-    <ul>
-      <li>Best Paper Award, XYZ Conference (20XX)</li>
-      <li>Outstanding Research Achievement Award (20XX)</li>
-      <li>Cybersecurity Competition Prize (20XX)</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Publications</h2>
-    <ul>
-      <li>
-        First Last, Second Author,  
-        “Paper Title,”  
-        <i>Proceedings of IEEE Conference / Journal Name</i>, 20XX.
-      </li>
-      <li>
-        First Last,  
-        “Paper Title,”  
-        <i>Journal of Information Security</i>, 20XX.
-      </li>
-    </ul>
-  </div>
-
-  <div class="section contact">
-    <h2>Contact</h2>
-    <ul>
-      <li>Email: <a href="mailto:yourname@email.com">yourname@email.com</a></li>
-      <li>GitHub: <a href="https://github.com/username">https://github.com/username</a></li>
-      <li>Google Scholar: <a href="#">Profile Link</a></li>
-      <li>ORCID: <a href="#">Profile Link</a></li>
-    </ul>
-  </div>
-
 </body>
 </html>
