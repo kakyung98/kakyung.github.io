@@ -1,0 +1,94 @@
+/* ===== Base ===== */
+:root{
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --card:#f8fafc;
+  --primary:#2563eb;
+  --primary-weak:#dbeafe;
+  --radius:14px;
+  --max:1100px;
+  --sidebar:340px;
+  --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--text);
+  background:var(--bg);
+}
+
+/* ===== Topbar ===== */
+.topbar{
+  position:sticky;
+  top:0;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{
+  max-width:var(--max);
+  margin:auto;
+  padding:14px 18px;
+  display:flex;
+  justify-content:space-between;
+}
+.nav a{
+  margin-left:10px;
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:600;
+}
+.nav a.active{
+  color:var(--primary);
+}
+
+/* ===== Layout ===== */
+.wrap{
+  max-width:var(--max);
+  margin:30px auto;
+  padding:0 18px;
+  display:grid;
+  grid-template-columns:var(--sidebar) 1fr;
+  gap:30px;
+}
+
+/* ===== Sidebar ===== */
+.profile{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:20px;
+}
+.avatar img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  display:block;
+  margin:auto;
+}
+.name{
+  text-align:center;
+  font-weight:700;
+}
+.role{
+  text-align:center;
+  color:var(--muted);
+}
+
+/* ===== Main ===== */
+main{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:24px;
+}
+.award-list{
+  list-style:none;
+  padding:0;
+}
+.award{
+  border-bottom:1px solid var(--line);
+  padding:12px 0;
+}
+.award:last-child{ border-bottom:none; }
