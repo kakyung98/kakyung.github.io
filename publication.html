@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Donghyuk Shin · Publication</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KaKyung Kim · Publication</title>
+
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
+<body>
 <header class="topbar">
   <div class="topbar-inner">
-    <div class="brand">Donghyuk Shin</div>
+    <div class="brand">KaKyung Kim</div>
     <nav class="nav">
       <a href="index.html">About</a>
       <a class="active" href="publications.html">Publication</a>
@@ -20,26 +22,58 @@
 </header>
 
 <div class="wrap">
-  <aside class="sidebar"></aside>
+  <!-- Sidebar (완전히 동일) -->
+  <aside class="sidebar">
+    <div class="profile">
+      <div class="avatar">
+        <img src="assets/profile.jpg" alt="Profile photo">
+      </div>
 
+      <h3 class="name">KaKyung Kim</h3>
+      <p class="role">Ph.D. Student in Data Science</p>
+
+      <ul class="meta">
+        <li>Chonnam National University</li>
+        <li>Gwangju, South Korea</li>
+        <li><a href="mailto:kakyung@jnu.ac.kr">kakyung@jnu.ac.kr</a></li>
+      </ul>
+
+      <div class="section-title">Research Interests</div>
+      <div class="interests">
+        <a href="#">Cybersecurity</a>
+        <a href="#">Deep Learning</a>
+        <a href="#">Data Science</a>
+        <a href="#">Industrial Control System</a>
+        <a href="#">Data-driven Security</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
   <main>
     <h1>Publications</h1>
+    <p class="subhead">Peer-reviewed papers and manuscripts</p>
 
-    <ul class="list">
-      <li>
-        <strong>Paper Title</strong><br/>
-        Author list.<br/>
-        <em>Conference / Journal, Year</em>
+    <div class="divider"></div>
+
+    <ul class="award-list">
+      <li class="award">
+        <p class="award-title">Paper Title One</p>
+        <p class="award-org">
+          KaKyung Kim, Co-author<br>
+          Conference / Journal, 2024
+        </p>
       </li>
 
-      <li>
-        <strong>Another Paper Title</strong><br/>
-        Author list.<br/>
-        <em>Conference / Journal, Year</em>
+      <li class="award">
+        <p class="award-title">Paper Title Two</p>
+        <p class="award-org">
+          KaKyung Kim, Co-author<br>
+          Conference / Journal, 2023
+        </p>
       </li>
     </ul>
   </main>
 </div>
-
 </body>
 </html>
