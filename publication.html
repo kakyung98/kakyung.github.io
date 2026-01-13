@@ -1,79 +1,182 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KaKyung Kim · Publication</title>
+---
+layout: default
+title: Publications
+permalink: /publications/
+---
 
-  <link rel="stylesheet" href="style.css" />
-</head>
+<div class="container">
 
-<body>
-<header class="topbar">
-  <div class="topbar-inner">
-    <div class="brand">KaKyung Kim</div>
-    <nav class="nav">
-      <a href="index.html">About</a>
-      <a class="active" href="publications.html">Publication</a>
-      <a href="awards.html">Award</a>
-      <a href="research.html">Research Topic</a>
-    </nav>
-  </div>
-</header>
+  <!-- 좌측 프로필 -->
+  <aside class="profile">
+    <img src="/assets/img/profile.jpg" alt="Profile Photo" />
 
-<div class="wrap">
-  <!-- Sidebar (완전히 동일) -->
-  <aside class="sidebar">
-    <div class="profile">
-      <div class="avatar">
-        <img src="assets/profile.jpg" alt="Profile photo">
-      </div>
+    <h2>Kakyung Kim</h2>
+    <p>Ph.D. Student in Datascience</p>
+    <p>Chonnam National University</p>
+    <p>Gwangju, South Korea</p>
+    <p>kakyung@jnu.ac.kr</p>
 
-      <h3 class="name">KaKyung Kim</h3>
-      <p class="role">Ph.D. Student in Data Science</p>
+    <div class="icons">
+      <a href="https://github.com/" aria-label="GitHub">🐙</a>
+      <a href="https://linkedin.com/" aria-label="LinkedIn">in</a>
+      <a href="https://orcid.org/" aria-label="ORCID">id</a>
+    </div>
 
-      <ul class="meta">
-        <li>Chonnam National University</li>
-        <li>Gwangju, South Korea</li>
-        <li><a href="mailto:kakyung@jnu.ac.kr">kakyung@jnu.ac.kr</a></li>
+    <div class="interests">
+      <h3>RESEARCH INTERESTS</h3>
+      <ul>
+        <li>Cybersecurity</li>
+        <li>Data Science</li>
+        <li>Deep Learning</li>
+        <li>Digital Forensics</li>
       </ul>
-
-      <div class="section-title">Research Interests</div>
-      <div class="interests">
-        <a href="#">Cybersecurity</a>
-        <a href="#">Deep Learning</a>
-        <a href="#">Data Science</a>
-        <a href="#">Industrial Control System</a>
-        <a href="#">Data-driven Security</a>
-      </div>
     </div>
   </aside>
 
-  <!-- Main -->
-  <main>
+
+  <!-- 우측 메인 -->
+  <main class="content">
+
     <h1>Publications</h1>
-    <p class="subhead">Peer-reviewed papers and manuscripts</p>
+    <hr />
 
-    <div class="divider"></div>
+    <h2>Journal Articles</h2>
 
-    <ul class="award-list">
-      <li class="award">
-        <p class="award-title">Paper Title One</p>
-        <p class="award-org">
-          KaKyung Kim, Co-author<br>
-          Conference / Journal, 2024
-        </p>
-      </li>
+    <!-- 2025 -->
+    <div class="pub-card">
+      <span class="pub-year">2025</span>
+      <h3 class="pub-title">
+        Data-Driven Digital Evidence Analysis for the Forensic Investigation of the Electric Vehicle Charging Infrastructure
+      </h3>
+      <p class="pub-authors">
+        Donghyuk Shin, Jae-Jun Ha, Ieck-Chae Euom
+      </p>
+      <p class="pub-venue">
+        <i>Computer Modeling in Engineering & Sciences</i>,
+        143(3), 3795–3838, June 2025
+      </p>
+    </div>
 
-      <li class="award">
-        <p class="award-title">Paper Title Two</p>
-        <p class="award-org">
-          KaKyung Kim, Co-author<br>
-          Conference / Journal, 2023
-        </p>
-      </li>
-    </ul>
+    <!-- 2024 -->
+    <div class="pub-card">
+      <span class="pub-year">2024</span>
+      <h3 class="pub-title">
+        Research on Digital Forensics Analyzing Heterogeneous Internet of Things Incident Investigations
+      </h3>
+      <p class="pub-authors">
+        Donghyuk Shin, Seung-Ju Han, Yu-Bin Kim, Ieck-Chae Euom
+      </p>
+      <p class="pub-venue">
+        <i>Applied Sciences</i>, 14(3), 1128, January 2024
+      </p>
+    </div>
+
+    <!-- 2022 -->
+    <div class="pub-card">
+      <span class="pub-year">2022</span>
+      <h3 class="pub-title">
+        Vulnerabilities of the Open Platform Communication Unified Architecture Protocol in Industrial Internet of Things Operation
+      </h3>
+      <p class="pub-authors">
+        Donghyuk Shin, Ga-Yeong Kim, Ieck-Chae Euom
+      </p>
+    </div>
+
   </main>
+
 </div>
-</body>
-</html>
+
+<!-- 페이지 전용 스타일 -->
+<style>
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 50px;
+}
+
+.profile {
+  text-align: center;
+}
+
+.profile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.profile h2 {
+  margin: 10px 0 5px;
+}
+
+.profile p {
+  font-size: 14px;
+  color: #555;
+  margin: 4px 0;
+}
+
+.icons {
+  margin: 15px 0;
+}
+
+.icons a {
+  margin: 0 6px;
+  font-size: 18px;
+}
+
+.interests {
+  margin-top: 25px;
+  background: #f7f8fa;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.interests h3 {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.interests li {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.content h1 {
+  font-size: 28px;
+}
+
+.content h2 {
+  font-size: 22px;
+  margin-top: 30px;
+}
+
+.pub-card {
+  background: #f9fafb;
+  border-left: 4px solid #1a4cff;
+  padding: 15px 20px;
+  margin: 20px 0;
+  border-radius: 6px;
+}
+
+.pub-year {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a4cff;
+}
+
+.pub-title {
+  font-size: 17px;
+  margin: 8px 0;
+}
+
+.pub-authors,
+.pub-venue {
+  font-size: 14px;
+  color: #444;
+}
+</style>
