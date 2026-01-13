@@ -1,92 +1,239 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KaKyung Kim · Research Topic</title>
+  <meta charset="UTF-8" />
+  <title>Projects | Kakyung Kim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: #222;
+      background: #fff;
+    }
+
+    a {
+      color: #1a4cff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    header .name {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-size: 14px;
+      color: #333;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    nav a.active {
+      background: #f2f4ff;
+      color: #1a4cff;
+      font-weight: 600;
+    }
+
+    /* ---------- Layout ---------- */
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 30px;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 50px;
+    }
+
+    /* ---------- Sidebar ---------- */
+    .profile {
+      text-align: center;
+    }
+
+    .profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .profile h2 {
+      margin: 10px 0 5px;
+      font-size: 20px;
+    }
+
+    .profile p {
+      margin: 4px 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .icons {
+      margin: 15px 0;
+    }
+
+    /* ✅ 아이콘 크기 조절 여기 */
+    .icons img {
+      width: 22px;
+      height: 22px;
+      margin: 0 6px;
+      opacity: 0.7;
+      vertical-align: middle;
+    }
+
+    .icons img:hover {
+      opacity: 1;
+    }
+
+    .interests {
+      margin-top: 25px;
+      background: #f7f8fa;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: left;
+    }
+
+    .interests h3 {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .interests li {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    /* ---------- Main Content ---------- */
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-top: 30px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e5e5e5;
+      margin: 25px 0;
+    }
+
+    .project {
+      margin-top: 20px;
+    }
+
+    .project-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .project-desc {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .project-meta li {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+  </style>
 </head>
 
 <body>
-<header class="topbar">
-  <div class="topbar-inner">
-    <div class="brand">KaKyung Kim</div>
-    <nav class="nav">
-      <a href="index.html">About</a>
-      <a href="publications.html">Publication</a>
-      <a href="awards.html">Award</a>
-      <a class="active" href="research.html">Research Topic</a>
-    </nav>
-  </div>
+
+<header>
+  <div class="name">Kakyung Kim</div>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="publication.html">Publications</a>
+    <a href="project.html" class="active">Projects</a>
+    <a href="research.html">Research Topic</a>
+  </nav>
 </header>
 
-<div class="wrap">
-  <!-- Sidebar (index/publications와 완전히 동일) -->
-  <aside class="sidebar">
-    <div class="profile">
-      <div class="avatar">
-        <img src="assets/profile.jpg" alt="Profile photo">
-      </div>
+<div class="container">
 
-      <h3 class="name">KaKyung Kim</h3>
-      <p class="role">Ph.D. Student in Data Science</p>
+  <!-- Sidebar -->
+  <aside class="profile">
+    <img src="profile.jpg" alt="Profile Photo" />
 
-      <ul class="meta">
-        <li>Chonnam National University</li>
-        <li>Gwangju, South Korea</li>
-        <li><a href="mailto:kakyung@jnu.ac.kr">kakyung@jnu.ac.kr</a></li>
+    <h2>Kakyung Kim</h2>
+    <p>Ph.D. Student in Datascience</p>
+    <p>Chonnam National University</p>
+    <p>Gwangju, South Korea</p>
+    <p>kakyung@jnu.ac.kr</p>
+
+    <div class="icons">
+      <a href="https://github.com/kakyung98" target="_blank" title="GitHub">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
+      </a>
+      <a href="https://orcid.org/0009-0000-8750-1606" target="_blank" title="ORCID">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID">
+      </a>
+    </div>
+
+    <div class="interests">
+      <h3>RESEARCH INTERESTS</h3>
+      <ul>
+        <li>Cybersecurity</li>
+        <li>Data Science</li>
+        <li>Deep Learning</li>
+        <li>Digital Forensics</li>
       </ul>
-
-      <div class="section-title">Research Interests</div>
-      <div class="interests">
-        <a href="#">Cybersecurity</a>
-        <a href="#">Deep Learning</a>
-        <a href="#">Data Science</a>
-        <a href="#">Industrial Control System</a>
-        <a href="#">Data-driven Security</a>
-      </div>
     </div>
   </aside>
 
   <!-- Main -->
   <main>
-    <h1>Research Topics</h1>
-    <p class="subhead">Main research directions and interests</p>
+    <h1>Projects</h1>
+    <hr />
 
-    <div class="divider"></div>
+    <h2>Research Projects</h2>
 
-    <h2>Cybersecurity</h2>
-    <p>
-      Research on cyber threat analysis, attack detection, and data-driven
-      security mechanisms. Focus on understanding adversarial behavior and
-      improving system resilience.
-    </p>
+    <div class="project">
+      <div class="project-title">
+        Research on Orchestration of Containerized Honeypots for Proactive Defense in Cyber-Physical Systems
+      </div>
 
-    <div class="divider"></div>
+      <div class="project-desc">
+        사이버 물리시스템의 선제적 방어 체계 적용을 위한 컨테이너 기반 허니팟 설계 및 배포 최적화 연구
+      </div>
 
-    <h2>Deep Learning</h2>
-    <p>
-      Application of deep learning models for security analytics, anomaly
-      detection, and classification problems in large-scale datasets.
-    </p>
+      <ul class="project-meta">
+        <li><b>Period:</b> Sep 2024 – Aug 2025</li>
+        <li><b>Funding:</b> National Research Foundation of Korea (Ministry of Education)</li>
+        <li><b>Program:</b> Doctoral Student Research Grant</li>
+        <li><b>Role:</b> Principal Investigator</li>
+      </ul>
+    </div>
 
-    <div class="divider"></div>
-
-    <h2>Industrial Control System Security</h2>
-    <p>
-      Security analysis of industrial control systems (ICS) and cyber-physical
-      systems, including attack modeling and defense strategies.
-    </p>
-
-    <div class="divider"></div>
-
-    <h2>Data-driven Security</h2>
-    <p>
-      Leveraging data science techniques to design intelligent and adaptive
-      security solutions based on real-world data.
-    </p>
   </main>
+
 </div>
+
 </body>
 </html>
