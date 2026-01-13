@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Kakyyung Kim</title>
+  <title>Projects | Kakyung Kim</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
@@ -42,13 +42,15 @@
       margin-left: 20px;
       font-size: 14px;
       color: #333;
+      padding: 6px 10px;
+      border-radius: 6px;
     }
 
     nav a.active {
+      background: #f2f4ff;
       color: #1a4cff;
       font-weight: 600;
     }
-
 
     /* ---------- Layout ---------- */
     .container {
@@ -79,38 +81,41 @@
     }
 
     .profile p {
-      margin: 5px 0;
+      margin: 4px 0;
       font-size: 14px;
       color: #555;
     }
 
-    .profile .icons {
+    .icons {
       margin: 15px 0;
     }
 
-    .profile .icons a {
+    /* ✅ 아이콘 크기 조절 여기 */
+    .icons img {
+      width: 22px;
+      height: 22px;
       margin: 0 6px;
-      font-size: 18px;
+      opacity: 0.7;
+      vertical-align: middle;
+    }
+
+    .icons img:hover {
+      opacity: 1;
     }
 
     .interests {
       margin-top: 25px;
-      text-align: left;
       background: #f7f8fa;
       padding: 15px;
       border-radius: 8px;
+      text-align: left;
     }
 
     .interests h3 {
-      font-size: 14px;
+      font-size: 13px;
+      color: #666;
       margin-bottom: 10px;
       letter-spacing: 1px;
-      color: #666;
-    }
-
-    .interests ul {
-      padding-left: 15px;
-      margin: 0;
     }
 
     .interests li {
@@ -119,23 +124,14 @@
     }
 
     /* ---------- Main Content ---------- */
-    section {
-      margin-bottom: 35px;
-    }
-
-    section h1 {
-      font-size: 26px;
+    h1 {
+      font-size: 28px;
       margin-bottom: 10px;
     }
 
-    section h2 {
+    h2 {
       font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    section p, section li {
-      font-size: 15px;
-      line-height: 1.6;
+      margin-top: 30px;
     }
 
     hr {
@@ -144,16 +140,25 @@
       margin: 25px 0;
     }
 
-    .news li {
-      margin-bottom: 6px;
+    .project {
+      margin-top: 20px;
     }
 
-    .pub-title {
+    .project-title {
+      font-size: 20px;
       font-weight: 600;
+      margin-bottom: 10px;
     }
 
-    .pub-item {
-      margin-bottom: 12px;
+    .project-desc {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .project-meta li {
+      font-size: 14px;
+      margin-bottom: 6px;
     }
   </style>
 </head>
@@ -165,7 +170,7 @@
   <nav>
     <a href="index.html">About</a>
     <a href="publication.html">Publications</a>
-    <a href="project.html">Projects</a>
+    <a href="project.html" class="active">Projects</a>
     <a href="research.html">Research Topic</a>
   </nav>
 </header>
@@ -183,9 +188,12 @@
     <p>kakyung@jnu.ac.kr</p>
 
     <div class="icons">
-      <a href="#">🐙</a>
-      <a href="#">in</a>
-      <a href="#">id</a>
+      <a href="https://github.com/kakyung98" target="_blank" title="GitHub">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
+      </a>
+      <a href="https://orcid.org/0009-0000-8750-1606" target="_blank" title="ORCID">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID">
+      </a>
     </div>
 
     <div class="interests">
@@ -201,35 +209,28 @@
 
   <!-- Main -->
   <main>
-    <section>
-      <h1>Publications</h1>
-  
-      <hr />
-  
-      <section>
-        <h2>Journal Articles</h2>
-  
-        <div class="pub-item">
-          <p class="pub-title">
-            Data-Driven Digital Evidence Analysis for the Forensic Investigation of the Electric Vehicle Charging Infrastructure
-          </p>
-          <p>
-            Donghyuk Shin, Jae-Jun Ha, Ieck-Chae Euom<br>
-            <i>Computer Modeling in Engineering & Sciences</i>, 2025
-          </p>
-        </div>
-  
-        <div class="pub-item">
-          <p class="pub-title">
-            Research on Digital Forensics Analyzing Heterogeneous Internet of Things Incident Investigations
-          </p>
-          <p>
-            Donghyuk Shin, Seung-Ju Han, Yu-Bin Kim, Ieck-Chae Euom<br>
-            <i>Applied Sciences</i>, 2024
-          </p>
-        </div>
-      </section>
-    </section>
+    <h1>Projects</h1>
+    <hr />
+
+    <h2>Research Projects</h2>
+
+    <div class="project">
+      <div class="project-title">
+        Research on Orchestration of Containerized Honeypots for Proactive Defense in Cyber-Physical Systems
+      </div>
+
+      <div class="project-desc">
+        사이버 물리시스템의 선제적 방어 체계 적용을 위한 컨테이너 기반 허니팟 설계 및 배포 최적화 연구
+      </div>
+
+      <ul class="project-meta">
+        <li><b>Period:</b> Sep 2024 – Aug 2025</li>
+        <li><b>Funding:</b> National Research Foundation of Korea (Ministry of Education)</li>
+        <li><b>Program:</b> Doctoral Student Research Grant</li>
+        <li><b>Role:</b> Principal Investigator</li>
+      </ul>
+    </div>
+
   </main>
 
 </div>
